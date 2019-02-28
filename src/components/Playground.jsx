@@ -1,5 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { invert } from 'polished';
+import { randomBytes } from 'crypto';
+import { Alert, Button} from 'reactstrap';
+
 /*
 Styled Components is a library for writing CSS in our JS files.
 
@@ -32,6 +36,7 @@ border: 2px solid black;
 `;
 */
 
+/*
 //passing in props to change the color of buttons
 const Button = styled.button`
 padding: 6px 10px;
@@ -42,8 +47,12 @@ color: white;
 
 ${props => (props.type === 'primary' ? `background: #2196f3;` : null)}
 
-`;
+&:hover {
+  color: ${invert('#000')};
+}
 
+`;
+*/
 const Button2 = styled.button`
   color: palevioletred;
   font-size: 1em;
@@ -90,9 +99,16 @@ export default function Playground() {
 export default function Playground() {
   return (
     <div>
-    <Button type="primary">Primary</Button>
-    <TomatoButton>Tomato Button</TomatoButton>
-    <Button2>Tomato Button</Button2>
+        <Button color="primary">Primary</Button>
+        <TomatoButton>Tomato Button</TomatoButton>
+        <Button2>Tomato Button</Button2>
+      <Alert color="primary">
+        This is a primary alert - check it out!
+    </Alert>
+      <Alert color="secondary">
+        This is a primary alert - check it out!
+    </Alert>
+
     </div>
   );
 }
